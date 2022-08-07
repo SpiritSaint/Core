@@ -35,7 +35,8 @@ jobs:
   execute:
     runs-on: ubuntu-latest
     container: "spiritsaint/core:${{ github.sha }}"
+    needs: [compile-and-push]
     steps:
       -
         name: Digest
-        run: echo $GITHUB_SHA
+        run: echo "${{ github.sha }}"
