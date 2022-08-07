@@ -18,7 +18,11 @@ jobs:
           sudo apt install build-essential
       -
         name: Build
-        run: ./build.sh
+        run: |
+          cd /app
+          ./build.sh
       -
         name: Run
-        run: ./Core
+        run: |
+          cd /app
+          ./Core
