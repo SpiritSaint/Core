@@ -17,8 +17,8 @@ jobs:
           sudo apt update 
           sudo apt install build-essential
       -
-        name: Compile
-        run: ./compile.sh
+        name: Build
+        run: ./build.sh
       -
         name: Run
         run: ./Core

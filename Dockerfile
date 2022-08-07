@@ -6,7 +6,7 @@ RUN apk add --update cmake make g++
 
 COPY source .
 
-RUN ./compile.sh
+RUN ./build.sh
 
 FROM alpine:3.16.1 as service
 
