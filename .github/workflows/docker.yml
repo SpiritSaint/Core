@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   compile-and-push:
+    name: "Compile And Push"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -33,13 +34,14 @@ jobs:
         name: Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   execute:
+    name: "Run"
     runs-on: ubuntu-latest
     container: "spiritsaint/core:${{ github.sha }}"
     needs: [compile-and-push]
     steps:
       -
         name: Run
-        run: ./Core
+        run: cd /app && ./Core
       -
         name: Digest
         run: echo "${{ github.sha }}"
