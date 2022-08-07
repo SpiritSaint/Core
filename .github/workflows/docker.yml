@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: spiritsaint/core:$GITHUB_SHA
+          tags: "spiritsaint/core:${{ github.sha }}"
           context: .
           file: Dockerfile
           no-cache: true
@@ -34,7 +34,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
   execute:
     runs-on: ubuntu-latest
-    container: spiritsaint/core:$GITHUB_SHA
+    container: "spiritsaint/core:${{ github.sha }}"
     steps:
       -
         name: Digest
