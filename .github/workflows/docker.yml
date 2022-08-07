@@ -38,4 +38,4 @@ jobs:
     steps:
       -
         name: Digest
-        run: echo ${{ $GITHUB_SHA }}
+        run: echo $GITHUB_SHA
