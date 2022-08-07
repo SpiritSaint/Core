@@ -19,7 +19,7 @@ jobs:
       -
         name: Build and Run
         run: |
-          cd /source
+          cd source
           ./build.sh
           ./Core
       -
