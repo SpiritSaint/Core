@@ -17,12 +17,11 @@ jobs:
           sudo apt update 
           sudo apt install build-essential
       -
-        name: Build
+        name: Build and Run
         run: |
-          cd /app
+          cd /source
           ./build.sh
-      -
-        name: Run
-        run: |
-          cd /app
           ./Core
+      -
+        name: Digest
+        run: echo "${{ github.sha }}"
