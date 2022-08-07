@@ -6,10 +6,7 @@ RUN apk add --update cmake make g++
 
 COPY source .
 
-RUN cmake -S . -B . \
-      -DCMAKE_BUILD_TYPE=Release \
-    && cmake --install . --strip \
-    && cmake --build . --config Release
+RUN ./compile.sh
 
 FROM alpine:3.16.1 as service
 
